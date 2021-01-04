@@ -41,7 +41,11 @@ class App extends React.Component {
 				noOfVideos: prevState.noOfVideos + 5
 			};
 		});
-		this.youTubeApi(this.state.searchWord);
+		if(this.state.searchWord === ''){
+			this.youTubeApi("Latest telugu video songs 2019");
+		}else{
+			this.youTubeApi(this.state.searchWord);
+		}
 	};
 
 	render() {
